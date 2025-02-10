@@ -1,0 +1,98 @@
+.ProseMirror {
+  > * + * {
+    margin-top: 0.75em;
+  }
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+    min-height: 1.5em; /* Ensure empty paragraphs are visible */
+  }
+
+  ul {
+    padding-left: 1em;
+    list-style-type: disc;
+  }
+
+  /* New image container styles */
+  .report-image-container {
+    position: relative;
+    margin: 1.5em 0;
+    padding: 0.5em 0;
+    min-height: 100px;
+    clear: both; /* Ensure proper text flow */
+  }
+
+  .report-image-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    transition: transform 0.1s ease-in-out;
+
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px dashed #0ea5e9;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .report-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    cursor: move;
+    margin: 0 auto;
+  }
+
+  /* Ensure text can be added around images */
+  p + .report-image-container,
+  .report-image-container + p {
+    margin-top: 1em;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  /* Style for empty paragraphs to make them visible */
+  p:empty::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    min-height: 1em;
+  }
+}
+
+.image-resizer {
+  display: inline-flex;
+  position: relative;
+  flex-grow: 0;
+
+  .resize-trigger {
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 2px solid #0ea5e9;
+    border-radius: 50%;
+    cursor: se-resize;
+  }
+}
+

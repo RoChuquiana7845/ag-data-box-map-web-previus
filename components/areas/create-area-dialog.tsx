@@ -289,7 +289,7 @@ export function CreateAreaDialog() {
               <Button type="submit" className="w-full mt-4" disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (
                   <>
-                    <span className="loading loading-spinner loading-sm mr-2"></span>
+                    <span className="loading loading-spinner loading-sm mr-2"/>
                     Creando...
                   </>
                 ) : (
